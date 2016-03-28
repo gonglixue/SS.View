@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <script src="d3.js"></script>
+    <title></title>
+</head>
+<body>
+
+<div class="bar-chart">
+    <button>update</button>
+</div>
+
+<script>
+    var w = 600;
+    var h = 250;
+    var svg = d3.select(".bar-chart")
+            .append("svg")
+            .attr("width",w)
+            .attr("height",h);
+
+    var dataset = [ 5, 10, 13, 19, 21, 25, 22, 18, 15, 13,
+        11, 12, 15, 20, 18, 17, 16, 18, 23, 25 ];
+
+    var xScale = d3.scale.ordinal()
+            .domain(d3.range(dataset.length))
+            .rangeRoundBands([0,w],0.05);
+    var yScale = d3.scale.linear()
+            .domain([0,d3.max(dataset)])
+            .range([0,h]);
+
+    svg.selectAll("rect")
+            .data(dataset)
+            .enter()
+            .append("rect")
+            .attr("x",function(d,i){
+                return xScale(i);
+            })
+            .attr("y",function(d,i){
+                return h - yScale(d);
+            })
+            .attr("width",xScale.rangeBand())
+            .attr("height",function(d){
+                return yScale(d);
+            })
+            .attr("fill",function(d,i){
+                return "rgb(0,0," + 10*d + ")";
+            });
+    svg.selectAll("text")
+            .data(dataset)
+            .enter()
+            .append("text")
+            .text(function(d){
+                return d;
+             })
+            .attr("text-anchor","middle")
+            .attr("x",function(d,i){
+                return xScale(i)+0.5*xScale.rangeBand();
+            })
+            .attr("y",function(d){
+                return h - yScale(d) + 14;
+            })
+            .attr("font-size","11px")
+            .attr("font-family","sans-serif")
+            .attr("fill","white");
+
+    d3.select("button").on("click",function(){
+        dataset = dataset = [ 11, 12, 15, 20, 18, 17, 16, 18, 23, 25,
+            5, 10, 13, 19, 21, 25, 22, 18, 15, 13 ];
+        d3.selectAll("rect")
+                .data(dataset)
+                .transition()
+                .duration(1000)
+                .attr("x",function(d,i){
+                    return xScale(i);
+                })
+                .attr("y",function(d,i){
+                    return h - yScale(d);
+                })
+                .attr("width",xScale.rangeBand())
+                .attr("height",function(d){
+                    return yScale(d);
+                })
+                .attr("fill",function(d,i){
+                    return "rgb(0,0," + 10*d + ")";
+                });
+        d3.selectAll("text")
+                .data(dataset)
+                .transition()
+                .duration(1000)
+                .text(function(d){
+                    return d;
+                })
+                .attr("text-anchor","middle")
+                .attr("x",function(d,i){
+                    return xScale(i)+0.5*xScale.rangeBand();
+                })
+                .attr("y",function(d){
+                    return h - yScale(d) + 14;
+                })
+                .attr("font-size","11px")
+                .attr("font-family","sans-serif")
+                .attr("fill","white");
+    })
+</script>
+
+</body>
+</html>
