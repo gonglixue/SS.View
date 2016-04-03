@@ -1,0 +1,130 @@
+﻿<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="../d3/d3.js"></script>
+    <script src="../jquery/jquery-2.2.1.js"></script>
+    <script src="./javascript/walk.js"></script>
+    <script src="./javascript/easySlider1.5.js"></script>
+    <link rel="stylesheet" href="MiSport.css">
+    <link rel="stylesheet" href="comment.css">
+    <script src="./javascript/comment.js"></script>
+</head>
+<body>
+
+<div class="banner">
+    <div class="wrap">
+        <div class="logo">
+            <img src="img/LOGO.png"/>
+        </div>
+        <div class="v-container">
+            <div class="v-line"></div>
+        </div>
+        <div class="slogan">
+            <span>Record your sport and sleep time.</span>
+        </div>
+        <div class="search-box"></div>
+    </div>
+</div>
+<div class="main">
+    <div class="nav">
+        <div class="wrap">
+            <ul class="tab">
+                <li class="inactive-page">
+                    <a class="nav-icon"  href="index.html">
+                        <div>
+                            <img src="img/main.png"/>
+                        </div>
+                        <div class="text-center">主页</div>
+                    </a>
+                </li>
+                <li  class="active-page">
+                    <a class="nav-icon" href="#">
+                        <div><img src="img/note.png"/></div>
+                        <div class="text-center">留言</div>
+                    </a>
+                </li>
+                <li class="inactive-page">
+                    <a class="nav-icon" href="profile.html">
+                        <div><img src="img/profile.png"/></div>
+                        <div class="text-center">个人资料</div>
+                    </a>
+                </li>
+                <li class="inactive-page">
+                    <a class="nav-icon" href="more.html">
+                        <div><img src="img/more.png"/></div>
+                        <div class="text-center">作品简介</div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="split">
+        <div class="wrap">
+            <img class="tri-point inactive" id="tri1" src="img/triangle.png">
+            <img class="tri-point active" id="tri2" src="img/triangle.png">
+            <img class="tri-point inactive" id="tri3" src="img/triangle.png">
+            <img class="tri-point inactive" id="tri4" src="img/triangle.png">
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="wrap">
+            <div class="white-bg">
+                <div class="comment-head">
+                    <h2 class="title2">留言板</h2>
+                    <p>留言将会发送至服务器。</p>
+                </div>
+                <div class="form">
+                   
+                        <textarea id="comment" name="comment" placehold="欢迎留下你的足迹"></textarea>
+                        <input type="submit" class="button" id="post_comment" value="提交" />
+                    
+                    <p id="comment-result"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="bottom">
+    <div class="copy">
+        <div class="wrap">
+            <div class="author-info">
+                <span>作者：龚立雪</span><br>
+                <span>浙江大学 数字媒体技术系 2017届</span>
+            </div>
+            <div class="contact-info">
+                <span>地址：浙江省杭州市浙大玉泉校区</span><br>
+                <span>邮箱：3130104153@zju.edu.cn   gonglixue_zju@163.com</span><br>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.getElementById("post_comment").onclick = function(){
+        var request = new XMLHttpRequest();
+        request.open("POST","comments.php");
+        var data = "comment=" + document.getElementById("comment").value;
+        request.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+        request.send(data);
+
+        request.onreadystatechange = function(){
+            if(request.readyState === 4){
+                if(request.status === 200){
+                    document.getElementById("comment-result").innerHTML = request.responseText;
+                }
+                else{
+                    alert("对不起，评论提交发生错误。错误状态码为：" + request.status);
+                }
+            }
+        }
+    }
+</script>
+
+</body>
+</html>

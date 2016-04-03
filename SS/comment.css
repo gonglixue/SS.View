@@ -1,0 +1,30 @@
+.white-bg{
+    background-color: white;
+    padding: 20px 40px 20px 40px;
+}
+
+.comment-head{
+    border-bottom: solid 1px #CCCCCC;
+    margin: 0 0 20px 0;
+}
+
+form{
+    margin: 20px 0 0 0;
+}
+
+textarea{
+    width: 30%;
+    height: 100px;
+    display: block;
+    margin: 0 0 20px 0;
+    padding: 5px 3px 3px 5px;
+}
+
+.button{
+    background: #5f6b95;
+    border: none;
+    padding: 10px 25px 10px 25px;
+    color: white;
+    box-shadow: 1px 1px 5px #B6B6B6;
+    text-shadow:1px 1px 1px #9E3F3F;
+}
