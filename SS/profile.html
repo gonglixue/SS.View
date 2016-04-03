@@ -1,0 +1,160 @@
+﻿<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="../d3/d3.js"></script>
+    <script src="../jquery/jquery-2.2.1.js"></script>
+    <script src="./javascript/walk.js"></script>
+    <script src="./javascript/easySlider1.5.js"></script>
+    <link rel="stylesheet" href="MiSport.css">
+    <link rel="stylesheet" href="profile.css">
+</head>
+<body>
+
+<div class="banner">
+    <div class="wrap">
+        <div class="logo">
+            <img src="img/LOGO.png"/>
+        </div>
+        <div class="v-container">
+            <div class="v-line"></div>
+        </div>
+        <div class="slogan">
+            <span>Record your sport and sleep time.</span>
+        </div>
+        <div class="search-box"></div>
+    </div>
+</div>
+<div class="main">
+    <div class="nav">
+        <div class="wrap">
+            <ul class="tab">
+                <li class="inactive-page">
+                    <a class="nav-icon"  href="index.html">
+                    <div>
+                        <img src="img/main.png"/>
+                    </div>
+                    <div class="text-center">主页</div>
+                    </a>
+                </li>
+                <li  class="inactive-page">
+                    <a class="nav-icon" href="comments.html">
+                    <div><img src="img/note.png"/></div>
+                    <div class="text-center">留言</div>
+                    </a>
+                </li>
+                <li class="active-page">
+                    <a class="nav-icon" href="#">
+                    <div><img src="img/profile.png"/></div>
+                    <div class="text-center">个人资料</div>
+                    </a>
+                </li>
+                <li class="inactive-page">
+                    <a class="nav-icon" href="more.html">
+                    <div><img src="img/more.png"/></div>
+                    <div class="text-center">作品简介</div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="split">
+        <div class="wrap">
+            <img class="tri-point inactive" id="tri1" src="img/triangle.png">
+            <img class="tri-point inactive" id="tri2" src="img/triangle.png">
+            <img class="tri-point active" id="tri3" src="img/triangle.png">
+            <img class="tri-point inactive" id="tri4" src="img/triangle.png">
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="wrap">
+            <div class="left-list personal">
+                <div class="photo">
+                    <img src="./img/gonglixue.jpg">
+                </div>
+                <div id="intro">
+                    <table border="0">
+                        <tr><td>姓名：</td><td>龚立雪</td></tr>
+                        <tr><td>学校：</td><td>浙江大学</td></tr>
+                        <tr><td>院系：</td><td>计算机科学与技术学院<br>数字媒体技术系</td></tr>
+                        <tr><td>毕业年份：</td><td>2017年毕业</td></tr>
+                        <tr><td>目标职位：</td><td>前端工程师</td></tr>
+                        <tr><td>联系方式：</td><td>18868110103<br>3130104153@zju.edu.cn<br>gonglixue_zju@163.com</td></tr>
+                    </table>
+                </div>
+            </div>
+            <div class="right-content">
+                <div class="personal-info">
+                    <div class="head-info">
+                        <h2 class="title2">个人简介</h2>
+                        <p>简短地介绍我自己。</p>
+                    </div>
+                    <div class="info-container">
+                        <table>
+                            <tr>
+                                <td class="title3">个人技能</td>
+                                <td><p>
+                                    熟悉HTML/CSS/JavaScript<br>
+                                    熟悉jquery、AJAX等前端技术<br>
+                                    熟悉d3.js等数据可视化工具<br>
+                                    了解php/python等后端语言<br>
+                                    理解web标准，对用户体验、人机交互以及用户需求有自己的理解<br>
+                                    熟悉基本数据结构与算法<br>
+                                    英语水平：CET-6、TOEFL 9<br>
+                                    <br>
+                                    除此之外：<br>
+                                    了解计算机视觉基本算法，有使用 openCV 的编程经验；<br>
+                                    有计算机图形学基础，有使用 openGL 的编程经验；<br>
+                                    有 Maya 基础，能够使用 Maya 进行场景建模及角色建模。<br>
+                                </p></td>
+                            </tr>
+                            <tr>
+                                <td class="title3">个人经历</td>
+                                <td><p>
+                                    现就读浙江大学计算机学院数字媒体技术系，学年成绩排名6/51<br>
+                                    2014-2015学年荣获优秀学生二等奖学金、学业二等奖学金、本科生国家基地奖学金<br>
+                                    2014-2015学年担任我校环聚力协会宣传部部长<br>
+                                    2015年冬季PAT考试乙级排名22%<br>
+                                    2015年作为学园社会实践团分队队长荣获全国百佳社会实践队伍<br>
+                                    2015-2016 秋冬学期参与我校 CAD/CG 实验室可视化小组游戏数据可视化
+                                    项目，在项目中完成数据清理以及数据格式控制等工作。<br>
+                                    现我校计算机学院女篮队成员<br>
+                                </p></td>
+                            </tr>
+                            <tr>
+                                <td class="title3">其他</td>
+                                <td><p>
+                                    个人github：<a href="https://github.com/gonglixue">https://github.com/gonglixue</a><br>
+                                    其他作品介绍：<a href="http://120.26.40.130/ss/more.html">http://120.26.40.130/ss/more.html</a>
+                                </p></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="bottom">
+    <div class="copy">
+        <div class="wrap">
+            <div class="author-info">
+                <span>作者：龚立雪</span><br>
+                <span>浙江大学 数字媒体技术系 2017届</span>
+            </div>
+            <div class="contact-info">
+                <span>地址：浙江省杭州市浙大玉泉校区</span><br>
+                <span>邮箱：3130104153@zju.edu.cn   gonglixue_zju@163.com</span><br>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

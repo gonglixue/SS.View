@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="../d3/d3.js"></script>
+    <script src="../jquery/jquery-2.2.1.js"></script>
+    <script src="./javascript/walk.js"></script>
+    <script src="./javascript/easySlider1.5.js"></script>
+    <link rel="stylesheet" href="MiSport.css">
+    <link rel="stylesheet" href="more.css">
+</head>
+<body>
+
+<div class="banner">
+    <div class="wrap">
+        <div class="logo">
+            <img src="img/LOGO.png"/>
+        </div>
+        <div class="v-container">
+            <div class="v-line"></div>
+        </div>
+        <div class="slogan">
+            <span>Record your sport and sleep time.</span>
+        </div>
+        <div class="search-box"></div>
+    </div>
+</div>
+<div class="main">
+    <div class="nav">
+        <div class="wrap">
+            <ul class="tab">
+                <li class="inactive-page">
+                    <a class="nav-icon"  href="index.html">
+                        <div>
+                            <img src="img/main.png"/>
+                        </div>
+                        <div class="text-center">主页</div>
+                    </a>
+                </li>
+                <li  class="inactive-page">
+                    <a class="nav-icon" href="comments.html">
+                        <div><img src="img/note.png"/></div>
+                        <div class="text-center">留言</div>
+                    </a>
+                </li>
+                <li class="inactive-page">
+                    <a class="nav-icon" href="profile.html">
+                        <div><img src="img/profile.png"/></div>
+                        <div class="text-center">个人资料</div>
+                    </a>
+                </li>
+                <li class="active-page">
+                    <a class="nav-icon" href="#">
+                        <div><img src="img/more.png"/></div>
+                        <div class="text-center">作品简介</div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="split">
+        <div class="wrap">
+            <img class="tri-point inactive" id="tri1" src="img/triangle.png">
+            <img class="tri-point inactive" id="tri2" src="img/triangle.png">
+            <img class="tri-point inactive" id="tri3" src="img/triangle.png">
+            <img class="tri-point active" id="tri4" src="img/triangle.png">
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="wrap">
+            <div class="work-item">
+                <h2 class="title2">本站点主页——Sport&Sleep：睡眠与运动信息记录</h2>
+                <p>本网站是搭建在阿里云CentOS系统服务器上，使用Nginx建站。
+                    首页使用D3.js，临摹“小米运动”app中的可视化交互图表。
+                    使用jquery实现部分交互。
+                </p>
+                <P>其中，Sport记录运动信息，包括当天运动信息和一周运动信息。
+                    当天运动信息通过图表展现当前完成步数进度，一周运动信息是对一周中每天运动量的统计，鼠标移至直方图可显示具体数值</P>
+                <p>Sleep记录睡眠信息。每天的睡眠信息包括深度睡眠和浅睡眠，深紫色的柱子代表深睡眠，浅紫色代表浅睡眠。
+                    通常一晚的睡眠是深浅交替的，鼠标移至直方图可查看每一阶段的持续时间。</p>
+                <p>Diet展现了各个国家的饮食构成的，通过饼图展现每种食物在饮食总量的比例。可通过下拉框选择国家，通过AJAX异步更新饼图。</p>
+                <p>未完待续。。。</p>
+            </div>
+            <div class="work-item">
+                <h2 class="title2">音乐资源分享平台</h2>
+                <p>这是一个音乐资源管理网站，管理员可上传音乐资源，管理音乐的上架/下架，管理评论区等等，管理员上传的图片将会自动加上水印。
+                    非注册用户可收听部分音乐，而另外的特别音乐只有注册用户可以收听。注册用户可以将自己喜欢的音乐收藏至个人列表里，便于下次收听。
+                    同时，网站还进行了简单的资费管理，用户通过参与评论区的评论可获得积分，积分可用于收听站内的“付费音乐”。
+                    除此之外，网站还可根据收听量进行排名、向用户推荐当前收听曲目的相关曲目
+                </p>
+                <div>
+                    <video class="loc-center" controls="controls">
+                        <source src="video/Dam.swf"/>
+                        <source src="video/Dam.mp4"/>
+                        <source src="video/Dam.mpg"/>
+                        <object data="video/Dam.mp4"/>
+                            <embed src="video/Dam.swf" />
+                        </object>
+                    </video>
+                </div>
+                <h4 class="title4">涉及技术</h4>
+                <ol>
+                    <li>后端通过python flask实现。</li>
+                    <li>flask被设计为一个可扩展框架，在本应用中使用了flask-bootstrap、flask-wtf等多个扩展包。</li>
+                    <li>使用python PIL包对图像进行处理</li>
+                    <li>BeautifulSoup抓取同类型歌曲推荐给用户</li>
+                </ol>
+                <p>服务器尚在配置中...</p>
+            </div>
+            <div class="work-item">
+                <h2 class="title2"><a href="cloudmusic/cloudmusic.html">临摹网易云音乐</a></h2>
+                <div class="img-wrap">
+                    <img class="loc-center" src="img/cloudmusic.JPG"/>
+
+                </div>
+                <div class="img-wrap">
+                    <img class="loc-center" src="img/cloudmusic2.JPG"/>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="bottom">
+    <div class="copy">
+        <div class="wrap">
+            <div class="author-info">
+                <span>作者：龚立雪</span><br>
+                <span>浙江大学 数字媒体技术系 2017届</span>
+            </div>
+            <div class="contact-info">
+                <span>地址：浙江省杭州市浙大玉泉校区</span><br>
+                <span>邮箱：3130104153@zju.edu.cn   gonglixue_zju@163.com</span><br>
+
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

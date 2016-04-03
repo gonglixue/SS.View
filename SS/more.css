@@ -1,0 +1,30 @@
+.work-item{
+    background-color: white;
+    margin: 5px 0 0 0;
+    padding: 10px 25px 10px 25px;
+}
+
+.work-item video{
+    height: 300px;
+    width: 500px;
+
+
+}
+.img-wrap {
+    padding: 20px 0 20px 0;
+}
+.work-item img{
+    width: 850px;
+    height: 400px;
+    box-shadow: 3px 3px 5px #B6B6B6;
+
+
+}
+h2 a{
+    color: #5f6b95;
+}
+.loc-center{
+    display: block;
+    margin: auto;
+}
+

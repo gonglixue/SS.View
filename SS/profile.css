@@ -1,0 +1,49 @@
+.personal{
+    float: left;
+    background-color: white;
+    padding: 19px 0 20px 0;
+    margin-bottom: 5px !important;
+}
+.photo img{
+    display: block;
+    width: 120px;
+    margin:auto;
+}
+
+#intro{
+    width: 200px;
+    margin: auto;
+    padding: 20px 0 0 0;
+}
+#intro td{
+    padding: 8px 0 8px 0;
+    border: none;
+}
+#intro td{
+    border-bottom: solid 1px #cccccc;
+}
+
+.info-container td{
+    padding: 9px 20px 0px 20px;
+}
+.info-container p{
+    line-height: 20px;
+}
+.info-container .title3{
+    width: 80px;
+}
+
+
+
+
+
+
+
+
+
+.work{
+    background-color: red;
+    height:100px;
+    width: 70%;
+    float: left;
+}
