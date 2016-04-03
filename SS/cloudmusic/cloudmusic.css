@@ -1,0 +1,510 @@
+/* 顶部导航 */
+#g-topbar{
+    width:100%
+    top:0px;
+}
+/* 顶部灰底导航 */
+.m-top{
+    background-color:#333;
+    height:70px;
+}
+.m-top .logo{
+    float:left;
+    width:174px;
+}
+.m-top .logo a{
+    display:block;
+    width:161px;
+    height:36px;
+    margin-top: 19px;
+    margin-right:18px;
+    background: url(images/top_logo.JPG);
+}
+
+.m-nav{
+    float:left;
+}
+.m-nav li, .m-nav li span{
+    float:left;  /*使得list横放*/
+    height:70px;
+    font-size:14px;
+    width:100px;
+    text-align: center;
+}
+.m-nav a em{
+    color:#ccc;
+   /* text-align:center;*/
+    line-height:76px;
+    /*width:96px;*/
+}
+/* 顶部红底导航 */
+.m-subnav{
+    height:35px;
+    background-color: rgb(192, 38, 38);
+}
+.nav{
+    float:left;
+    margin-left: 180px;
+    margin-right:auto;
+
+}
+
+.nav li{
+    float:left;
+    padding-left:10px;
+    padding-right:10px;
+    margin-right:23px;
+    margin-left: 23px;
+}
+.nav a em{
+    line-height:37px;
+    color:#fff;
+
+}
+/* 滑动栏 */
+#index-banner
+{
+    height:341px;
+    background-color: #333;
+}
+
+.n-ban .f-pr{
+    float: left;
+}
+
+.download a{
+    display:block;
+    width: 250px;
+    height:336px;
+
+    background: url(images/download2.jpg)
+
+}
+/* 主推荐页面 */
+#discover-module{
+    width:980px;
+    height:1390px;
+    margin-left:auto;
+    margin-right:auto;
+    border:1px solid #d3d3d3;
+}
+.g-mn1{
+    width:100%;
+    margin-right: -250px;
+    float:left;
+}
+.g-mn1c{
+    margin-right: 249px;
+    padding: 20px 20px 40px;
+}
+.g-sd1{
+    float:right;
+    width:250px;
+
+}
+.v-hd2{
+    height:33px;
+    padding:0px 10px 0px 34px;
+    background-position: -255px -165px;
+    border-bottom: 2px solid #c10d0c;
+     /*通过line-height调节行文字垂直方向位置*/
+}
+.v-hd2 .tit{
+    font-size: 20px;
+    float: left;
+    text-decoration:none;
+    font-family: "Microsoft Yahei", Arial, Helvetica, sans-serif
+}
+.tab{
+    float:left;
+    margin:7px 0 0 20px;
+}
+.v-hd2 .line{
+    margin-right: 10px;
+    margin-left:10px;
+    color:#ccc;
+}
+.v-hd2 .more{
+    float: right;
+    margin-top: 9px;
+}
+
+.n-myinfo{
+    height: 126px;
+    background-color: #f5f5f5;
+}
+.n-myinfo .note{
+    margin-left: auto;
+    margin-right:auto;
+    line-height: 22px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    width: 205px;
+}
+.n-myinfo .btn{
+    margin-left:auto;
+    margin-right: auto;
+}
+.index-enter-default{
+    width: 100px;
+    height: 31px;
+    text-align: center;
+    color: #fff;
+    line-height: 31px;
+    background-color:  rgb(192, 38, 38);
+    display: block;
+}
+
+.n-singer{
+    margin-top: 15px;
+}
+.v-hd3{
+    height:23px;
+    margin-left:20px;
+    margin-right:20px;
+    border-bottom: 1px solid #ccc;
+    display: block;
+    font-size: 12px;
+}
+.v-hd3 .more{
+    float: right;
+    font-weight: normal;  /*不加粗*/
+}
+#g-ft{
+    border-top:1px solid #d5d5d5;
+    background-color: #f9f9f9;
+    min-height:30px;
+
+    height:125px;
+}
+
+
+.wrap{
+    width:980px;
+    margin:auto;
+}
+
+/* 热门推荐专辑 */
+.m-cvrlst{
+    margin-top: 20px;
+    margin-left: -42px;
+    display: block;
+    height: 468px;
+}
+.m-cvrlst li{
+    width: 140px;
+    height: 204px;
+    float: left;
+    display: inline-block;  /* !!!!!!!!!!!! */
+    padding:0 0 30px 42px;
+    line-height: 1.4;
+}
+.u-cover{
+    width: 140px;
+    height: 140px;
+    position: relative;
+}
+.u-cover .bottom{
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 27px;
+    position: absolute;
+    background-color: #ccc;
+}
+.u-cover .icon-play{
+    position: absolute;
+    right: 10px;
+    bottom: 5px;
+    width: 16px;
+    height: 17px;
+}
+.u-cover .icon-headset{
+    float: left;
+    width: 14px;
+    height: 11px;
+    display: inline-block;
+    margin: 9px 5px 9px 10px;
+}
+.u-cover .nb{
+    float: left;
+    margin-top: 7px;
+    color:#ffffff;
+}
+.m-cvrlst li .dec{
+    margin-top: 8px;
+    margin-bottom: 3px;
+    font-size: 14px;
+    width: 100%;
+}
+
+/* 新碟上架 */
+.n-disk{
+    height: 186px;
+    margin: 20px 0 37px;
+    border: 1px solid #d3d3d3;
+    position: relative;
+}
+
+.n-disk .inner{
+    height: 184px;
+    padding-left: 16px;
+    background-color: #f5f5f5;
+    border: 1px solid #fff;
+}
+
+.n-disk .roll{
+    width: 645px;
+    height: 185px;
+}
+
+.n-disk .roll ul{
+    width: 645px;
+    margin-top: 28px;
+    top: 0;
+    display: block;
+}
+.n-disk li{
+    display:block;
+    float: left;
+    width: 118px;
+    height: 150px;
+    margin-left: 11px;
+}
+.n-disk .u-cover-albl{
+    width: 100px;
+    height:100px;
+    margin-bottom: 7px;
+}
+.f-thide{
+    line-height: 18px;
+}
+
+/*榜单*/
+.n-blist{
+    height: 472px;
+    margin-top: 20px;
+    padding-left: 1px;
+}
+.blk{
+    float: left;
+    width: 226px;
+    margin: 0;
+    border-top: solid 1px #d3d3d3;
+    border-left: solid 1px #d3d3d3;
+    border-bottom: solid 1px #d3d3d3;
+}
+.n-blist .right-side{
+    border-right: solid 1px #d3d3d3;
+}
+.n-blist .top{
+    height: 100px;
+    padding:20px 0 0 19px;
+    background-color: #f5f5f5;
+}
+.u-cover-4{
+    float: left;
+    width: 80px;
+    height: 80px;
+}
+.u-cover-4 img{
+    width: 100%;
+    height: 100%;
+}
+.top .tit{
+    float: left;
+    width: 116px;
+    margin: 6px 0 0 10px;
+}
+.f-fs1{
+    font-size: 14px;
+}
+.n-blist ol{
+    height: 319px;
+    /*margin-left: 15px;*/
+    line-height: 32px;
+}
+.n-blist ol ul{
+    height: 32px;
+}
+
+.n-blist ol .no{
+    float: left;
+    width: 35px;
+    height: 32px;
+    margin: 0;
+    color:#666;
+    font-size: 16px;
+    text-align: center;
+}
+.n-blist ol .no-top{
+    color:#c10d0c;
+}
+.n-blist li{
+    padding-left: 15px;
+}
+.n-blist .odd{
+    background-color: #e8e8e8;
+}
+.n-blist .even{
+    background-color: #f5f5f5;
+}
+.n-blist .more{
+    height: 32px;
+    padding-right: 32px;
+    line-height: 32px;
+    text-align: right;
+}
+/* 底部Logo */
+#g-ft .wrap{
+    height: 125px;
+}
+.m-ft .logo{
+    float:left;
+    width:247px;
+    height:46px;
+    margin:29px 0px 0px 22px;
+    display: block;
+}
+.s-fc0{
+    color: #000;
+}
+.s-fc3{
+    color:#666;
+}
+.s-fc4{
+    color:#999;
+}
+
+
+/*右侧歌手列表*/
+.u-btn2, .u-btn2 i{
+    background: url(http://s2.music.126.net/style/web2/img/button2.png?9722b92566fbb8db5eda6fb192bed351) no-repeat 0 9999px;
+}
+
+.f-ib{
+    display: inline-block;
+}
+.n-enter{
+    margin: 6px 0 14px 20px;
+}
+.n-singer ul{
+    height: 380px;
+}
+.n-enter li{
+    margin-top: 14px;
+}
+.n-enter li, .n-enter .item{
+    float: left;
+    width: 210px;
+    height: 62px;
+    background-color: #fafafa;
+}
+.n-enter .head{
+    width: 62px;
+    height: 62px;
+    float: left;
+}
+.n-enter .info{
+    float: left;
+    width: 133px;
+    height: 60px;
+    padding-left: 14px;
+    border: 1px solid #e9e9e9;
+    border-left: none;
+}
+.n-enter p{
+    margin-top: 8px;
+}
+.n-enter h4{
+    margin-top: 8px;
+}
+.n-singer .u-btn2, .u-btn2 i{
+
+    height: 31px;
+
+    line-height: 31px;
+    text-align: center;
+    display: inline-block;
+
+
+    color: #333;
+}
+
+.u-btn2 {
+
+    padding: 0 5px 0 0 ;
+    background-position: right -100px;
+    margin-left: 20px;
+    border-radius: 4px;
+}
+.u-btn2 i{
+    width: 170px;
+    font-weight: bold;
+    color: #333;
+    background-position: 0 -59px;
+    padding: 0 15px 0 20px;
+}
+/* 右边dj */
+.n-dj{
+    margin-top: 30px;
+}
+.n-hotdj{
+    margin: 20px 0 0 20px;
+}
+.n-hotdj img{
+    height: 40px;
+    width: 40px;
+}
+.n-hotdj li{
+    width: 210px;
+    height: 50px;
+    float: left;
+}
+.n-hotdj .cver{
+    float: left;
+    margin-right: 10px;
+}
+.n-hotdj .info{
+    width: 160px;
+    height: 210px;
+    float: left;
+    line-height: 21px;
+}
+.n-hotdj .info p{
+    line-height:  21px;
+}
+.copy{
+    float:left;
+    width:560px;
+    margin-top:29px;
+    color:#9b9b9b;
+}
+.copy a{
+
+}
+
+ul{
+    display:block;
+    list-style-type: disc;
+}
+li{
+    list-style:none;
+    display: list-item;
+}
+body, p, h1 ,h2, h3, h4, ul, ol, li, dd, dt{
+    margin: 0px;
+    padding: 0px;
+}
+a{
+    text-decoration: none;
+    color:#333;
+}
+em, i{
+    font-style: normal;
+}
+body{
+    color:#333;
+    font-size:12px;
+    font-family:Arial;
+}
