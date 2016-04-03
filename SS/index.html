@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="../d3/d3.js"></script>
+    <script src="../jquery/jquery-2.2.1.js"></script>
+    <script src="./javascript/walk.js"></script>
+    <script src="./javascript/easySlider1.5.js"></script>
+
+    <link rel="stylesheet" href="MiSport.css">
+</head>
+<body>
+
+<div class="banner">
+    <div class="wrap">
+        <div class="logo">
+            <img src="img/LOGO.png"/>
+        </div>
+        <div class="v-container">
+            <div class="v-line"></div>
+        </div>
+        <div class="slogan">
+            <span>Record your sport and sleep time.</span>
+        </div>
+        <div class="search-box"></div>
+    </div>
+</div>
+<div class="main">
+    <div class="nav">
+        <div class="wrap">
+            <ul class="tab">
+                <li class="active-page">
+                    <a class="nav-icon" href="#">
+                    <div>
+                        <img src="img/main.png"/>
+                    </div>
+                    <div class="text-center">主页</div>
+                    </a>
+                </li>
+                <li  class="inactive-page">
+                    <a class="nav-icon" href="comments.html">
+                    <div><img src="img/note.png"/></div>
+                    <div class="text-center">留言</div>
+                    </a>
+                </li>
+                <li class="inactive-page">
+                    <a class="nav-icon" href="profile.html">
+                    <div><img src="img/profile.png"/></div>
+                    <div class="text-center">个人资料</div>
+                    </a>
+                </li>
+                <li class="inactive-page" >
+                    <a class="nav-icon" href="more.html">
+                    <div><img src="img/more.png"/></div>
+                    <div class="text-center">作品简介</div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="split">
+        <div class="wrap">
+            <img class="tri-point active" id="tri1" src="img/triangle.png">
+            <img class="tri-point inactive" id="tri2" src="img/triangle.png">
+            <img class="tri-point inactive" id="tri3" src="img/triangle.png">
+            <img class="tri-point inactive" id="tri4" src="img/triangle.png">
+        </div>
+    </div>
+    <div class="content">
+        <div class="wrap">
+            <div class="slide">
+                <ul>
+                    <li><img src="img/slide1.jpg"></li>
+                    <li><img src="img/slide2.jpg"></li>
+                    <li><img src="img/slide3.jpg"></li>
+                </ul>
+            </div>
+            <div class="left-list">
+                <div class="left-item active" id="sleep" onclick="clickSleep()">
+                    <span><img src="img/leftIcons/headphones.png" class="left-icon"/></span>
+                    <span class="item-text">SLEEP</span>
+                </div>
+                <div class="left-item" id="sport" onclick="clickSport()">
+                    <span><img src="img/leftIcons/clock.png" class="left-icon"/></span>
+                    <span class="item-text">SPORT</span>
+                </div>
+                <div class="left-item" id="diet" onclick="clickDiet()">
+                    <span><img src="img/leftIcons/hamburger.png" class="left-icon"/></span>
+                    <span class="item-text">DIET</span>
+                </div>
+                <div class="left-item" id="to-do-list">
+                    <span><img src="img/leftIcons/notepad.png" class="left-icon"/></span>
+                    <span class="item-text">TO DO LIST</span>
+                </div>
+                <div class="left-item">
+                    <span><img src="img/leftIcons/glove.png" class="left-icon"/></span>
+                    <span class="item-text">RANK</span>
+                </div>
+                <div class="left-item">
+                    <span><img src="img/leftIcons/medicine.png" class="left-icon"/></span>
+                    <span class="item-text">HEALTH</span>
+                </div>
+                <div class="left-item">
+                    <span><img src="img/leftIcons/headphones.png" class="left-icon"/></span>
+                    <span class="item-text">MUSIC</span>
+                </div>
+                <!--div class="left-item">
+                    <span><img src="img/leftIcons/glove.png" class="left-icon"/></span>
+                    <span class="item-text">RANK</span>
+                </div>
+                <div class="left-item">
+                    <span><img src="img/leftIcons/glove.png" class="left-icon"/></span>
+                    <span class="item-text">RANK</span>
+                </div>
+                <div class="left-item">
+                    <span><img src="img/leftIcons/glove.png" class="left-icon"/></span>
+                    <span class="item-text">RANK</span>
+                </div>
+                <div class="left-item">
+                    <span><img src="img/leftIcons/glove.png" class="left-icon"/></span>
+                    <span class="item-text">RANK</span>
+                </div-->
+            </div>
+            <div class="right-content">
+                <div class="sport-info">
+                    <div class="head-info">
+                        <h2 class="title2">Sport Information</h2>
+                        <p>Record your running information everyday.</p>
+                        <span class="tab active" id="tab-sport-today"  onclick="clickSportToday()"><h4 class="title4">TODAY</h4></span>
+                        <span class="tab inactive" id="tab-sport-week"  onclick="clickSportWeek()"><h4 class="title4">WEEK</h4></span>
+                    </div>
+                    <div class="info-container" id="day-sport-info">
+                        <div class="chart-info">
+                            <p id="target">今日目标步数：<span>10000</span></p>
+                            <p id="current">已完成：<span>70%</span></p>
+                            <p id="kaluli">消耗卡路里：<span>1g</span></p>
+                        </div>
+                        <div class="circle-chart">
+                        </div>
+                        <div class="inner-info">
+                            <div id="walk-data">
+                            <span>当前步数</span><br>
+                            <span class="big-number">7000</span><br>
+                            <span class="small-inner-info">4000米 | 300千卡</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="info-container" id="week-sport-info">
+                        <div class="chart-info">
+                            <p>日期：<span  id="week-date"></span></p>
+                            <p>行走距离：<span  id="week-distance"></span></p>
+                            <p>行走步数：<span  id="week-count"></span></p>
+                            <p>消耗卡路里：<span  id="week-caluli"></span></p>
+                        </div>
+                        <div class="bar-chart" id="week-sport-bar"></div>
+                    </div>
+                </div>
+                <div class="sleep-info">
+                    <div class="head-info">
+                        <h2 class="title2">Sleeping Information</h2>
+                        <p>Record your sleeping information everyday.</p>
+                        <span class="tab active" id="tab-sleep-today" onclick="clickSleepToday()"><h4 class="title4">TODAY</h4></span>
+                        <span class="tab inactive" id="tab-sleep-week" onclick="clickSleepWeek()"><h4 class="title4">WEEK</h4></span>
+                    </div>
+                    <div class="info-container" id="day-sleep-info">
+                        <div class="chart-info">
+                            <p id="sleep-total">睡眠时长：<span>5小时24分钟</span></p>
+                            <p id="sleep-deep">深度时长：<span>1小时59分钟</span></p>
+                            <p id="sleep-shallow">浅睡时长：<span>3小时25分钟</span></p>
+                            <p id="sleep-begin">入睡时间：<span>01:34</span></p>
+                            <p id="sleep-end">醒来时间：<span>06:58</span></p>
+                            <p id="sleep-segment"></p>
+                        </div>
+                        <div class="bar-chart" id="today-sleep-bar">
+                        </div>
+                    </div>
+                    <div class="info-container" id="week-sleep-info">
+                        <div class="chart-info">
+                            <p>日期：<span id="week-sleep-date"></span></p>
+                            <p>睡眠时长：<span id="week-sleep-total"></span></p>
+                            <p>深睡时长：<span id="week-sleep-deep"></span></p>
+                            <p>浅睡时长：<span id="week-sleep-shallow"></span></p>
+                        </div>
+                        <div class="bar-chart" id="week-sleep-bar"></div>
+                    </div>
+                </div>
+                <div class="diet-info">
+
+                    <div class="head-info">
+                        <h2 class="title2">Diet Information</h2>
+
+                        <p>Statistics show different composition of diet in different country.</p>
+                        <p class="title2">Choose a country:
+                            <select name="country">
+                                <option value="china">China</option>
+                                <option value="us">United State</option>
+                                <option value="india">India</option>
+                                <option value="brazil">Brazil</option>
+                            </select>
+                        </p>
+                    </div>
+                    <div class="info-container" id="diet-info">
+                        <div class="chart-info">
+                            <!--select name="country">
+                                <option value="china">China</option>
+                                <option value="us">United State</option>
+                                <option value="india">India</option>
+                                <option value="brazil">Brazil</option>
+                            </select-->
+
+
+                            <span class="symbol" id="symbol1">M</span><span class="symbol-name">Meat</span><br>
+                            <span class="symbol" id="symbol2">M</span><span class="symbol-name">Other</span><br>
+                            <span class="symbol" id="symbol3">M</span><span class="symbol-name">Sugar & Fat</span><br>
+                            <span class="symbol" id="symbol4">M</span><span class="symbol-name">Grain</span><br>
+                            <span class="symbol" id="symbol5">M</span><span class="symbol-name">Produce</span><br>
+                            <span class="symbol" id="symbol6">M</span><span class="symbol-name">Dairy & Eggs</span>
+                        </div>
+                        <div id="diet-chart">
+                            <div id="tooltip" class="hidden">
+                                <span id="food-name"></span><br>
+                                <span id="food-value"></span>
+                            </div>
+
+                        </div>
+                    <div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<div class="bottom">
+    <div class="copy">
+        <div class="wrap">
+            <div class="author-info">
+                <span>作者：龚立雪</span><br>
+                <span>浙江大学 数字媒体技术系 2017届</span>
+            </div>
+            <div class="contact-info">
+                <span>地址：浙江省杭州市浙大玉泉校区</span><br>
+                <span>邮箱：3130104153@zju.edu.cn   gonglixue_zju@163.com</span><br>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<!--步数进度-->
+<script>
+    var w = 250;
+    var h = 250;
+    var innerRadius = 85;
+    var outerRadius = w / 2;
+    var arc = d3.svg.arc()
+            .innerRadius(innerRadius)
+            .outerRadius(outerRadius);
+    var pie = d3.layout.pie();
+
+    var dataset=[];
+    var total = 250;
+    var percent = 0.7;
+    for(var j=0; j<total; j++){
+        dataset.push(1)
+    }
+
+    var svg = d3.select(".circle-chart")
+            .append("svg")
+            .attr("width",w)
+            .attr("height",h);
+
+    var arcs = svg.selectAll("g.arc")
+            .data(pie(dataset))
+            .enter()
+            .append("g")
+            .attr("class","arc")
+            .attr("transform","translate("+outerRadius+","+outerRadius+")");
+    // draw arc paths
+    var paths = arcs.append("path")
+            .attr("d",arc)
+            .attr("fill",function(d,i){
+                if(i==0) {
+                    if(percent>=0.5)
+                        return "#99CCFF";
+                    else
+                        return "#666666";
+                }
+                if(i==total/2)
+                    return "#FFF";
+                if(i%2==1) {
+                    if(i<(percent*total))
+                        return "#99CCFF";
+                    else
+                        return "#666666";
+                }
+                else
+                    return "#FFF";
+            })
+
+            .attr("id",function(d,i){
+                return i;
+            });
+
+
+
+</script>
+<!--一天睡眠-->
+<script>
+    var totalTime = 8*60 + 5;
+    var sleepSet=[
+        {"time":49, "type":0},
+        {"time":37, "type":1},
+        {"time":26, "type":0},
+        {"time":58, "type":1},
+        {"time":51, "type":0},
+        {"time":14, "type":1},
+        {"time":42, "type":0},
+        {"time":15, "type":1},
+        {"time":56, "type":0},
+        {"time":27, "type":1},
+        {"time":49, "type":0},
+        {"time":18, "type":1},
+        {"time":43, "type":0}
+    ]
+    var w_oneday_sleep = 350;
+    var h_oneday_sleep = 250;
+
+    var barWidth = function(time){
+        return w_oneday_sleep*time/totalTime;
+    }
+    var barHeight = function(type){
+        if(type==0)
+            return h_oneday_sleep*0.8;
+        if(type==1)
+            return h_oneday_sleep;
+    }
+    var xPosition = function(k){
+        var j;
+        var preLength=0;
+        if(k==0)
+            return 0;
+        for(j=0;j<k;j++){
+            preLength += sleepSet[j]["time"];
+        }
+        return w_oneday_sleep * preLength / totalTime;
+    }
+    var colorType = function(type){
+        if(type==0)
+            return "#9999CC";
+        if(type==1)
+            return "#666699";
+        if(type==3)
+            return "#FF9999";
+    }
+
+    var svg = d3.select("#today-sleep-bar")
+            .append("svg")
+            .attr("width",w_oneday_sleep)
+            .attr("height",h_oneday_sleep);
+
+    svg.selectAll("rect")
+            .data(sleepSet)
+            .enter()
+            .append("rect")
+            .attr("x",function(d,i){
+                return xPosition(i);
+            })
+            .attr("y",function(d,i){
+                return h_oneday_sleep - barHeight(d["type"]);
+            })
+            .attr("width",function(d,i){
+                return barWidth(d["time"])-2;
+            })
+            .attr("height",function(d,i){
+                return barHeight(d["type"]);
+            })
+            .attr("fill",function(d,i){
+                return colorType(d["type"]);
+            })
+            .on("mouseover",function(d,i){
+                var time, type;
+                if(d["type"]==0)
+                    type="浅睡眠";
+                else if(d["type"]==1)
+                    type="深睡眠";
+                else if(d["type"]==2)
+                    type="清醒";
+                time = d["time"];
+                var s = type + "  |  " + "持续" + time + "分钟";
+                $("#sleep-segment").text(s);
+
+                d3.select(this).attr("fill","#CCCCFF")
+            })
+            .on("mouseout",function(d,i){
+                d3.select(this).attr("fill",colorType(d["type"]));
+            })
+</script>
+<!--一周睡眠-->
+<script>
+    var sleepWeekSet=[
+        {"date":"2/9","total":5*60+37, "deep":1*60+34, "shallow":4*60+3},
+        {"date":"2/10","total":5*60+35, "deep":1*60+59, "shallow":3*60+36},
+        {"date":"2/11","total":7*60+21, "deep":2*60+06, "shallow":5*60+15},
+        {"date":"2/12","total":8*60+5, "deep":2*60+49, "shallow":5*60+16},
+        {"date":"2/13","total":7*60+55, "deep":2*60+53, "shallow":5*60+2},
+        {"date":"2/14","total":5*60+53, "deep":2*60+0, "shallow":3*60+53},
+        {"date":"2/15","total":4*60+42, "deep":1*60+35, "shallow":3*60+7}
+    ];
+
+    var w_week_sleep = 350;
+    var h_week_sleep = 250;
+
+    var xScale = d3.scale.ordinal()
+            .domain(d3.range(sleepWeekSet.length))
+            .rangeRoundBands([0,w_week_sleep],0.05);
+    var yScale = d3.scale.linear()
+            .domain([0, d3.max(sleepWeekSet,function(d){
+                return d["total"];
+            })])
+            .rangeRound([0, h_week_sleep]);
+    var color = d3.scale.ordinal()
+            .range(["9999CC","#666699"]);
+
+    var xAxis = d3.svg.axis()
+            .scale(xScale)
+            .orient("bottom");
+    var yAxis = d3.svg.axis()
+            .scale(yScale)
+            .orient("left");
+
+    var svg = d3.select("#week-sleep-bar").append("svg")
+            .attr("width",w_week_sleep)
+            .attr("height",h_week_sleep)
+    //先画深睡眠，在下面;再画浅睡眠在上面
+    var deepbar = svg.selectAll("rect")
+            .data(sleepWeekSet)
+            .enter()
+            .append("rect")
+            .attr("class","deep-bar")
+            .attr("fill","#666699")
+            .attr("x",function(d,i){
+                return xScale(i);
+            })
+            .attr("y",function(d,i){
+                return h_week_sleep - yScale(d["deep"]);
+            })
+            .attr("height",function(d){
+                return yScale(d["deep"]);
+            })
+            .attr("width",xScale.rangeBand())
+            .on("mouseover",function(d,i){
+                d3.select(this).attr("fill","#CCCCFF");
+                $("#week-sleep-date").text(d["date"]);
+                $("#week-sleep-total").text(function(i, origText){
+                    var total = d["total"];
+                    var hour = parseInt(total / 60);
+                    var minutes = total % 60;
+                    return hour+"小时 " + minutes + "分钟";
+                } );
+                $("#week-sleep-deep").text(function(i, origText){
+                    var total = d["deep"];
+                    var hour = parseInt(total / 60);
+                    var minutes = total % 60;
+                    return hour+"小时 " + minutes + "分钟";
+                });
+                $("#week-sleep-shallow").text(function(i, origText){
+                    var total = d["shallow"];
+                    var hour = parseInt(total / 60);
+                    var minutes = total % 60;
+                    return hour+"小时 " + minutes + "分钟";
+                });
+            })
+            .on("mouseout",function(d,i){
+                d3.select(this).attr("fill","#666699");
+            });
+
+
+    var shallowbar = svg.selectAll("g")
+            .data(sleepWeekSet)
+            .enter()
+            .append("g")
+            .append("rect")
+            .attr("class","shallow-bar")
+            .attr("fill","#9999cc")
+            .attr("x",function(d,i){
+                return xScale(i);
+            })
+            .attr("y", function(d,i){
+                return h_week_sleep - yScale(d["deep"]) - yScale(d["shallow"]);
+            })
+            .attr("height",function(d){
+                return yScale(d["shallow"]);
+            })
+            .attr("width",xScale.rangeBand())
+            .on("mouseover",function(d,i){
+                d3.select(this).attr("fill","#CCCCFF");
+                $("#week-sleep-date").text(d["date"]);
+                $("#week-sleep-total").text(function(i, origText){
+                    var total = d["total"];
+                    var hour = parseInt(total / 60);
+                    var minutes = total % 60;
+                    return hour+"小时 " + minutes + "分钟";
+                } );
+                $("#week-sleep-deep").text(function(i, origText){
+                    var total = d["deep"];
+                    var hour = parseInt(total / 60);
+                    var minutes = total % 60;
+                    return hour+"小时 " + minutes + "分钟";
+                });
+                $("#week-sleep-shallow").text(function(i, origText){
+                    var total = d["shallow"];
+                    var hour = parseInt(total / 60);
+                    var minutes = total % 60;
+                    return hour+"小时 " + minutes + "分钟";
+                });
+            })
+            .on("mouseout",function(d,i){
+                d3.select(this).attr("fill","#9999cc");
+            });
+</script>
+<!--一周运动-->
+<script>
+    var w_sport_week = 350;
+    var h_sport_week = 250;
+
+    var sportSet = [
+        {"date":"2/7", "distance":7.19, "count":10424, "caluli":297},
+        {"date":"2/8", "distance":8.93, "count":12809, "caluli":368},
+        {"date":"2/9", "distance":6.65, "count":8901, "caluli":265},
+        {"date":"2/10", "distance":11.31, "count":15543, "caluli":459},
+        {"date":"2/11", "distance":15.30, "count":20683, "caluli":635},
+        {"date":"2/12", "distance":7.25, "count":10448, "caluli":304},
+        {"date":"2/13", "distance":5.13, "count":7472, "caluli":216}
+    ]
+
+    var svg = d3.select("#week-sport-bar")
+            .append("svg")
+            .attr("width",w_sport_week)
+            .attr("height",h_sport_week);
+    var xScale = d3.scale.ordinal()
+            .domain(d3.range(sportSet.length))
+            .rangeRoundBands([0,w_sport_week],0.05);
+    var yScale = d3.scale.linear()
+            .domain([0, d3.max(sportSet, function(d){
+                return d["count"];
+            })
+            ])
+            .range([0,h_sport_week]);
+
+
+    svg.selectAll("rect")
+            .data(sportSet)
+            .enter()
+            .append("rect")
+            .attr("id",function(d,i){
+                return "week-" + i;
+            })
+            .attr("x",function(d,i){
+                return xScale(i);
+            })
+            .attr("y",function(d){
+                return h_sport_week - yScale(d["count"]);
+            })
+            .attr("width",xScale.rangeBand())
+            .attr("height",function(d){
+                return yScale(d["count"]);
+            })
+            .attr("fill","#5f6b95")
+            .on("mouseover",function(d,i){
+                var s = d["date"];
+                $("#week-date").text(d["date"]);
+                //document.getElementById("week-date").innerHTML = s;
+                $("#week-distance").text(d["distance"]);
+                $("#week-count").text(d["count"]);
+                $("#week-caluli").text(d["caluli"])
+                d3.select(this).attr("fill","#99CCFF");
+            })
+            .on("mouseout",function(d,i){
+                d3.select(this).attr("fill","#5f6b95");
+            })
+
+
+</script>
+<!--slide-->
+<script>
+    $(document).ready(function(){
+        $(".slide").easySlider({
+            auto: true,
+            continuous: true
+        });
+    });
+</script>
+
+<!--饮食-->
+<script src="javascript/diet.js">
+
+
+</script>
+
+</body>
+</html>
